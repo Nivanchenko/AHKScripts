@@ -2,11 +2,11 @@
 GetTextMode(Mode){
 if (Mode = True) 
     {
-        TextMode := "Normal"
+        TextMode := "vi"
     }
 else 
     {
-        TextMode := "Insert"
+        TextMode := "normal"
     }
 return TextMode
 }
@@ -83,6 +83,12 @@ return
 
 a::
 Send, {Right}
+current_mode := False
+NotifyMode(current_mode)
+return
+
+Return::
+Send, {Return}
 current_mode := False
 NotifyMode(current_mode)
 return
